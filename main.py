@@ -1,10 +1,23 @@
 # woord_1 = "surf"
 
-spelen = input("Beginnen aan galgje ja/nee:")
 
 hetwoord=["s","a","p"]
 goedeletters=[]
 fouteletters=[]
+
+
+def printtussenstand ():
+  print("goede letters", goedeletters)
+  tussenstand=" "
+  for letter in hetwoord:
+    geraden=goedeletters.count (letter)
+    if geraden > 0:
+      tussenstand= tussenstand + letter
+    else:
+      tussenstand= tussenstand + "_" 
+    tussenstand= tussenstand + " "
+  print(tussenstand)
+
 
 while len(goedeletters) < len (hetwoord):
   nieuweletter = input ("kies een letter:")
@@ -15,9 +28,11 @@ while len(goedeletters) < len (hetwoord):
   else:
     print("fout...")
     fouteletters.append(nieuweletter)
-  
+  printtussenstand()
 
   print("foute letters", fouteletters)
-  print("goede letters", goedeletters)
 
 print("einde, het woord was: SAP")
+
+
+spelen = input("Begin opnieuw aan galgje ja/nee:")
