@@ -1,13 +1,22 @@
 # woord_1 = "surf"
+import random
 
 
-hetwoord=["s","a","p"]
+
+woordenlijst=["informatica", "informatiekunde", "spelletje", "aardigheidje", "scholier", "fotografie", "waardebepaling", "specialiteit", "verzekering", "universiteit", "heesterperk"]
+
+
+willekeuriggetal= random.randint(0,10)
+
+hetwoord= woordenlijst [willekeuriggetal]
 goedeletters=[]
 fouteletters=[]
 
+print("Welkom bij galgje, je mag 5 fouten maken om het woord te raden, succes.")
+print("het woord dat je kan raden bestaat uit:", len(hetwoord), "letters")
 
 def printtussenstand ():
-  print("goede letters", goedeletters)
+  
   tussenstand=" "
   for letter in hetwoord:
     geraden=goedeletters.count (letter)
@@ -18,21 +27,22 @@ def printtussenstand ():
     tussenstand= tussenstand + " "
   print(tussenstand)
 
+printtussenstand ()
 
-while len(goedeletters) < len (hetwoord):
-  nieuweletter = input ("kies een letter:")
+while len(goedeletters) < len (hetwoord) and len(fouteletters) < 5:
+  nieuweletter = input ("kies een letter:") 
   goed=hetwoord.count(nieuweletter)
   if goed > 0:
     print("JA, deze letter is goed")
     goedeletters.append(nieuweletter)
-  else:
+  else: 
     print("fout...")
     fouteletters.append(nieuweletter)
   printtussenstand()
 
   print("foute letters", fouteletters)
 
-print("einde, het woord was: SAP")
+print("EINDE")
 
 
 spelen = input("Begin opnieuw aan galgje ja/nee:")
