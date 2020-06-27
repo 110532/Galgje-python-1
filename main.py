@@ -25,7 +25,6 @@ while spelen=="ja":
   willekeuriggetal= random.randint(0,10)
 
   hetwoord= woordenlijst [willekeuriggetal]
-  #hetwoord="sap"
   teradenletters=len(hetwoord)  
 
   goedeletters=[]
@@ -34,10 +33,7 @@ while spelen=="ja":
   print("Welkom bij galgje, je mag 5 fouten maken om het woord te raden, succes.")
   print("het woord dat je kan raden bestaat uit:", teradenletters, "letters")
 
-
-
   printtussenstand ()
-
 
   while teradenletters > 0 and fouten < 5:
     nieuweletter = input ("kies een letter:") 
@@ -55,7 +51,6 @@ while spelen=="ja":
   
     print("foute letters", fouteletters)
 
-
   if teradenletters==0:
     print("gefelciciteerd, je hebt het woord geraden")
   else:
@@ -67,6 +62,3 @@ while spelen=="ja":
   print()
 
 print("Tot ziens...")
-
-#for (goedeletters) print ("gefeliciteerd")
-#for (fouteletters) print ("jammer, verloren")
